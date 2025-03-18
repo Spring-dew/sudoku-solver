@@ -5,3 +5,8 @@ This game features four modes of gameplay "Easy", "Medium", "Hard" along with a 
 This game has clean user interface with necessary features.
 
 This game has options like "AI move" for hint, "Solve" for solving. This game solves Sudoku puzzles which is Constraint Satisfaction Problems (CSP), using "Maintaining Arc Consistency Algorithm" which makes it good at solving quickly.
+
+![homepage](sudoku_game_screenshots/homepage.png?raw=true)
+![game](sudoku_game_screenshots/game.png?raw=true)
+![ai solve](sudoku_game_screenshots/ai_solve.png?raw=true)
+![generate](sudoku_game_screenshots/generate.png?raw=true)
