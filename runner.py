@@ -28,8 +28,10 @@ BLUE = (0, 0, 255)
 
 # Create game
 pygame.init()
-size = width, height = 600, 400
+size = width, height = 900, 600 # 600, 400
 screen = pygame.display.set_mode(size)
+pygame.display.set_caption('Sudoku Solver')
+
 
 # Fonts
 OPEN_SANS = "assets/fonts/OpenSans-Regular.ttf"
@@ -135,43 +137,43 @@ while True:
         ):
             i, j = highlight
             key = event.key
-            key_dowm = False
+            key_down = False
             if key == pygame.K_1:
                 game.add_value(i + 1, j + 1, 1)
-                key_dowm = True
+                key_down = True
             if key == pygame.K_2:
                 game.add_value(i + 1, j + 1, 2)
-                key_dowm = True
+                key_down = True
             if key == pygame.K_3:
                 game.add_value(i + 1, j + 1, 3)
-                key_dowm = True
+                key_down = True
             if key == pygame.K_4:
                 game.add_value(i + 1, j + 1, 4)
-                key_dowm = True
+                key_down = True
             if key == pygame.K_5:
                 game.add_value(i + 1, j + 1, 5)
-                key_dowm = True
+                key_down = True
             if key == pygame.K_6:
                 game.add_value(i + 1, j + 1, 6)
-                key_dowm = True
+                key_down = True
             if key == pygame.K_7:
                 game.add_value(i + 1, j + 1, 7)
-                key_dowm = True
+                key_down = True
             if key == pygame.K_8:
                 game.add_value(i + 1, j + 1, 8)
-                key_dowm = True
+                key_down = True
             if key == pygame.K_9:
                 game.add_value(i + 1, j + 1, 9)
-                key_dowm = True
+                key_down = True
             if key == pygame.K_ESCAPE:
                 game.delete_value(i + 1, j + 1)
-                key_dowm = True
+                key_down = True
             if key == pygame.K_DELETE:
                 game.delete_value(i + 1, j + 1)
-                key_dowm = True
+                key_down = True
 
             # Starting Time.
-            if starting_time is None and key_dowm:
+            if starting_time is None and key_down:
                 starting_time = datetime.datetime.now().strftime("%H:%M:%S")
                 starting_time = datetime.datetime.strptime(starting_time, "%H:%M:%S")
                 end_time = None
@@ -757,7 +759,7 @@ while True:
             elif ai_button.collidepoint(mouse) and not won:
                 hint_var, hint = ai.hint()
                 game.add_value(*hint_var, hint, 2)
-                time.sleep(0.2)
+                time.sleep(0.4)
 
         # Get highlight.
         for i in range(ROW_COUNT):
